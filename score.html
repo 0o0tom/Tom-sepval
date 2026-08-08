@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit gratuit — Votre score de visibilité locale en 2 minutes | Tom Sepval</title>
+<meta name="description" content="18 questions, 2 minutes, résultat immédiat. Découvrez gratuitement le score de visibilité en ligne de votre entreprise locale en Provence — sans email, sans engagement.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://tomsepval.fr/score.html">
+<meta property="og:title" content="Quel est votre score de visibilité locale ?">
+<meta property="og:description" content="18 questions, 2 minutes, résultat immédiat. Testez gratuitement la présence en ligne de votre entreprise.">
+<meta property="og:image" content="https://tomsepval.fr/images/tom-portrait.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://tomsepval.fr/score.html">
+<link rel="preload" href="fonts/poppins-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geist-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/score.css">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Score de visibilité locale",
+  "url": "https://tomsepval.fr/score.html",
+  "applicationCategory": "BusinessApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Tom Sepval" },
+  "description": "Auto-diagnostic gratuit de la visibilité en ligne des entreprises locales : fiche Google, site web, réseaux sociaux, avis, publicité, performance commerciale."
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("-Pwnhq7pG-yjAGp2H");</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo"><img src="images/logo.webp" alt="Tom Sepval" width="1038" height="202"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="immobilier.html">Immobilier</a></li>
+      <li><a href="artisans.html">Artisans</a></li>
+      <li><a href="restaurateurs.html">Restaurateurs</a></li>
+      <li><a href="score.html" class="nav-cta">Audit gratuit</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Ouvrir le menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main class="score-page">
+
+  <!-- ÉTAPE 0 — INTRO -->
+  <section class="score-step is-active" id="step-intro" aria-label="Introduction">
+    <div class="wrap score-wrap">
+      <span class="eyebrow">Outil gratuit</span>
+      <h1>Quel est votre score de visibilité locale&nbsp;?</h1>
+      <p class="hero-sub">18 questions concrètes sur votre présence en ligne. 2 minutes. Votre score s'affiche immédiatement à l'écran, et vous recevez le récapitulatif par email.</p>
+
+      <div class="intro-form">
+        <div class="field">
+          <label for="sc-activite">Votre activité</label>
+          <select id="sc-activite">
+            <option value="">Sélectionnez</option>
+            <option value="Artisan">Artisan</option>
+            <option value="Restaurateur">Restaurateur</option>
+            <option value="Immobilier">Agence immobilière</option>
+            <option value="Autre">Autre commerce local</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sc-ville">Votre ville</label>
+          <input type="text" id="sc-ville" placeholder="Ex. Manosque, Aix, Toulon…" autocomplete="address-level2">
+        </div>
+        <div class="field">
+          <label for="sc-nom">Votre nom</label>
+          <input type="text" id="sc-nom" placeholder="Votre nom" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="sc-email">Votre email</label>
+          <input type="email" id="sc-email" placeholder="vous@exemple.fr" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="sc-tel">Votre téléphone</label>
+          <input type="tel" id="sc-tel" placeholder="06 XX XX XX XX" autocomplete="tel">
+        </div>
+        <button class="btn btn-primary" id="btn-start" type="button">Calculer mon score</button>
+        <p class="cta-note">Auto-diagnostic basé sur les 6 axes de mon audit.</p>
+        <p class="rgpd-note">En démarrant le test, vous acceptez que Tom Sepval vous recontacte au sujet de votre visibilité en ligne. Vos données ne sont ni revendues ni partagées. <a href="mentions-legales.html">En savoir plus</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPES 1 à 6 — QUIZ (injecté par score.js) -->
+  <section class="score-step" id="step-quiz" aria-label="Questionnaire" hidden>
+    <div class="wrap score-wrap">
+      <div class="quiz-progress" aria-hidden="true">
+        <div class="quiz-progress-bar" id="quiz-bar"></div>
+      </div>
+      <p class="quiz-axis-label" id="quiz-axis-label"></p>
+      <div id="quiz-questions"></div>
+      <div class="quiz-nav">
+        <button class="btn btn-ghost" id="btn-prev" type="button">Précédent</button>
+        <button class="btn btn-primary" id="btn-next" type="button">Continuer</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 7 — RÉSULTAT -->
+  <section class="score-step" id="step-result" aria-label="Résultat" hidden>
+    <div class="wrap score-wrap">
+      <span class="eyebrow">Votre résultat</span>
+      <div class="score-figure">
+        <span class="score-number" id="score-number">0</span><span class="score-total">/100</span>
+      </div>
+      <h2 class="score-verdict" id="score-verdict"></h2>
+      <p class="score-verdict-sub" id="score-verdict-sub"></p>
+
+      <div class="axes-result" id="axes-result"></div>
+
+      <div class="score-weakpoint" id="score-weakpoint"></div>
+
+      <!-- CTA AUDIT -->
+      <div class="score-cta-block">
+        <div class="score-cta-pitch">
+          <span class="eyebrow">La suite de votre audit</span>
+          <h2>Votre score dit ce qui bloque.<br>Le rendez-vous montre comment le régler.</h2>
+          <p>Vous venez de faire la première étape. La suite&nbsp;: 20&nbsp;minutes en direct avec moi, un diagnostic précis de vos 6&nbsp;axes, et 3&nbsp;actions concrètes à mettre en place — que l'on travaille ensemble ensuite ou non.</p>
+          <ul>
+            <li>En direct, jamais par email</li>
+            <li>Sans engagement</li>
+            <li>Préparé à partir de vos réponses d'aujourd'hui</li>
+          </ul>
+        </div>
+        <div class="score-cta-action">
+          <button type="button" class="btn btn-primary" id="btn-book" style="width:100%; justify-content:center;">Réserver mon rendez-vous</button>
+          <p class="form-status" id="score-form-status"></p>
+          <p class="cta-note">Un clic suffit — j'ai déjà vos coordonnées et vos réponses. Je vous recontacte pour fixer le créneau.</p>
+        </div>
+      </div>
+
+      <button class="btn-restart" id="btn-restart" type="button">Refaire le test</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo"><img src="images/logo.webp" alt="Tom Sepval" width="1038" height="202"></div>
+        <p style="max-width:32ch; font-size:0.9rem;">Digital local pour TPE, artisans et commerçants en Provence.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Cibles</h4>
+        <ul>
+          <li><a href="immobilier.html">Immobilier</a></li>
+          <li><a href="artisans.html">Artisans</a></li>
+          <li><a href="restaurateurs.html">Restaurateurs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Zone d'intervention</h4>
+        <ul>
+          <li>Alpes-de-Haute-Provence (04)</li>
+          <li>Hautes-Alpes (05)</li>
+          <li>Bouches-du-Rhône (13)</li>
+          <li>Var (83) · Vaucluse (84)</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="score.html">Faire mon audit gratuit</a></li>
+          <li><a href="mailto:contact@tomsepval.fr">contact@tomsepval.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tom Sepval — Tous droits réservés</span>
+      <span class="footer-links"><a href="gestion-publicite.html">Gestion de publicité</a> · <a href="creation-site-web.html">Création de site web</a> · <a href="location-site-web.html">Location de site web</a> · <a href="photo-immobilier.html">Photo immobilier</a> · <a href="mentions-legales.html">Mentions légales</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/score.js"></script>
+</body>
+</html>
